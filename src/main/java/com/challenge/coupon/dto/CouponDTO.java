@@ -21,6 +21,7 @@ public record CouponDTO(
         @DecimalMin(value = "0.5", message = "O desconto mínimo deve ser de 0.5")
         BigDecimal discountValue,
 
+        @FutureOrPresent(message = "A data de expiração não pode ser no passado")
         @NotNull(message = "A data de expiração é obrigatória")
         LocalDate expirationDate,
 
